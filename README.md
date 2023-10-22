@@ -206,7 +206,7 @@
 
 ![Atm_BranchDims](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/093af28a-95ce-4455-ab0f-56e5bc0a4b40)
 
-# Secound Cube "The cube is Genarlized About Business and Specified for CEO And CMO Measure risk And Profits About Industry"
+# Secound Cube "The cube is Genarlized About Business and Specified for the CEO And CMO Should closely track financial performance, set clear goals, and analyse key metrics to measure profits. they must identify and manage risks by conducting assessments and creating strategies to mitigate potential threats."
 
 ![Cube](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/a5d9acd4-638b-406b-bdcb-d48097e89a08)
 
@@ -216,9 +216,10 @@
 
 ![122-123](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/99f321b5-35aa-4c55-adbe-b25bc96bc2e4)
 
+#Visualzation 
+#Using Power BI
 
-
-
+https://app.powerbi.com/view?r=eyJrIjoiYzExY2Y4ZmItNmNhZC00NWYwLTg4MjctZmQwY2M0NDY0YjAwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9
 
 
 
