@@ -14,180 +14,181 @@
 
 # Let's go for structure
 
-create database Union_Bank
-go
-USE Union_Bank
-go
+<br> create database Union_Bank
+<br> go
 
---Creating table named Customers
+<br> USE Union_Bank
+<br> go
 
-create table Customers 
-(
-CustomerId int primary key identity(1,1),
-FirstName varchar(50) not null,
-LastName varchar(50) not null,
-Gender varchar(1) not null,
-Email varchar(50) not null,
-BirthDate date not null,
-Age as year(getdate())-year (BirthDate),
-State varchar(50) not null,
---constraint ch1 check(Gender in ('m','f'))
-);
-go
+<br> --2)Q2.Create all the tables mentioned in the database diagram.
+<br> --create tables & add constraint Section 
+<br> --3)Q3. Create all the constraints based on the database diagram.
 
---Creating a table named Customer_phones
+<br> --Creating table named Customers
 
-create table Customer_phones 
-(
-CustomerId int,
-phone varchar(50) not null,
-constraint  Customer_phones_IDS primary key (CustomerId, phone),
-constraint Customer_phones_Customers foreign key (CustomerId) 
-references Customers (CustomerId)
-);
-go
+<br> create table Customers 
+<br> (
+<br> CustomerId int primary key identity(1,1),
+<br> FirstName varchar(50) not null,
+<br> LastName varchar(50) not null,
+<br> Gender varchar(1) not null,
+<br> Email varchar(50) not null,
+<br> BirthDate date not null,
+<br> Age as year(getdate())-year (BirthDate),
+<br> City varchar(50) not null,
+<br> State varchar(50) not null,
+<br> --constraint ch1 check(Gender in ('m','f'))
+<br> );
+<br> go
 
---Creating a table named Branch
+<br> --Creating table named Customer_phones
 
-create table Branch 
-(
-BranchId int primary key,
-BranchName varchar(50) not null,
-Branch_Location varchar(50) not null,
-);
-go
+<br> create table Customer_phones 
+<br> (
+<br> CustomerId int,
+<br> phone varchar(50) not null,
+<br> constraint  Customer_phones_IDS primary key (CustomerId, phone),
+<br> constraint Customer_phones_Customers foreign key (CustomerId) 
+<br> references Customers (CustomerId)
+<br> );
+<br> go
 
---Creating a table named Account
+<br> --Creating table named Branch
 
-create table Account 
-(
-AccountNumber int primary key, 
-AccountType varchar(50) ,
-Balance float not null,
-Account_Status varchar(30) not null,
-Branchid INT,
-CustomerId int,
-constraint customer_Account foreign key (CustomerId)
-references Customers (CustomerId),
-constraint Branch_Account foreign key (Branchid)
-references Branch (BranchId),
---constraint ch2 check(Account_status in ('active','not active')),
-);
-go
+<br> create table Branch 
+<br> (
+<br> BranchId int primary key,
+<br> BranchName varchar(50) not null,
+<br> Branch_Location varchar(50) not null,
+<br> );
+<br> go
 
-alter table account add constraint check_status check(account type in ('saving','current'))
+<br> --Creating table named Account
 
---Creating a table named Transactions
+<br> create table Account 
+<br> (
+<br> AccountNumber int primary key, 
+<br> AccountType varchar(50) ,
+<br> Balance float not null,
+<br> OpenDate date default getdate(),
+<br> Account_Status varchar(30) not null,
+<br> Branchid INT,
+<br> CustomerId int,
+<br> constraint customer_Account foreign key (CustomerId)
+<br> references Customers (CustomerId),
+<br> constraint Branch_Account foreign key (Branchid)
+<br> references Branch (BranchId),
+<br> --constraint ch2 check(Account_status in ('active','not active')),
+<br> );
+<br> go
+  
+<br> ---we can check on account type through this constraint to check if 
+<br> --- the account saving or current ---
+<br> alter table account add constraint check_status check(accounttype in ('saving','current'))
 
-create table Transactions 
-(
-Transaction_Type_Id int primary key identity (1,1),
-TransactionType varchar(30) not null,
-);
-go
+<br> --Creating table named Transactions
 
---Creating a table named Card 
+<br> create table Transactions 
+<br> (
+<br> Transaction_Type_Id int primary key identity (1,1),
+<br> TransactionType varchar(30) not null,
+<br> );
+<br> go
 
-create table Card (
-CardNumber int primary key,
-CardType varchar(30) not null,
-card_Status varchar (30) not null,
-ExpiryDate date not null,
-AccountNumber int,
-constraint Card_Account  foreign key (AccountNumber)
-references Account (AccountNumber) 
-);
-go
+<br> --Creating table named Card 
 
-ALTER TABLE card 
-ADD add column csv INT null
-ALTER TABLE card
-ALTER COLUMN cardnumber BIGINT 
+<br> create table Card (
+<br> CardNumber int primary key,
+<br> CardType varchar(30) not null,
+<br> card_Status varchar (30) not null,
+<br> ExpiryDate date not null,
+<br> AccountNumber int,
+<br> constraint Card_Account  foreign key (AccountNumber)
+<br> references Account (AccountNumber) 
+<br> );
+<br> go
 
---Creating a table named Employee
+<br> --Creating table named Employee
 
-create table Employee
-(
-EmployeeId int primary key,
-FirstName varchar(30) NOT NULL,
-LastName varchar(30) NOT null,
-Salary DECIMAL NOT NULL,
-Position varchar(50) NOT NULL,
-SupervisorID int,
-branchid INT,
-Dno INT,
-constraint super_Employee foreign key(SupervisorID)
-REFERENCES Employee (EmployeeId),
-CONSTRAINT branchid_Employee foreign key(branchid)
-references branch(branchid) ,
-);
-go
-ALTER TABLE Employee
-ALTER COLUMN SuperVisor_ID 
+<br> create table Employee
+<br> (
+<br> EmployeeId int primary key,
+<br> FirstName varchar(30) NOT NULL,
+<br> LastName varchar(30) NOT null,
+<br> Salary DECIMAL NOT NULL,
+<br> Position varchar(50) NOT NULL,
+<br> SupervisorID int,
+<br> branchid INT,
+<br> Dno INT,
+<br> constraint super_Employee foreign key(SupervisorID)
+<br> REFERENCES Employee (EmployeeId),
+<br> CONSTRAINT branchid_Employee foreign key(branchid)
+<br> references branch(branchid) ,
+<br> );
+<br> go
 
---create a table named Department
+<br> --create table named Department
 
-CREATE TABLE Department 
-(
-Dnumber INT PRIMARY KEY,
-Dname VARCHAR(50) NOT NULL,
-MgriD INT,
-constraint manager_Employee foreign key(MgriD)
-REFERENCES Employee (EmployeeId) 
-)
+<br> CREATE TABLE Department 
+<br> (
+<br> Dnumber INT PRIMARY KEY,
+<br> Dname VARCHAR(50) NOT NULL,
+<br> MgriD INT,
+<br> constraint manager_Employee foreign key(MgriD)
+<br> REFERENCES Employee (EmployeeId) 
+<br> )
 
-ALTER TABLE employee 
-ADD constraint Dno_Employee foreign key(Dno)references Department (DNumber) 
+<br> ALTER TABLE employee 
+<br> ADD constraint Dno_Employee foreign key(Dno)references Department (DNumber) 
 
---Creating a table named Loan
+<br> --Creating table named Loan
 
-create table Loan 
-(
-LoanId int primary key,
-Amount decimal not null,
-loan_months_terms int not null,
-LoanType varchar(30) not null,
-StartDate date not null,
-EndDate date not null,
-InterestRate varchar(20) not null,
-customerid int,
-BranchId int,
-constraint Loan_customer foreign key (customerid)
-references Customers (customerid),
-constraint Loan_Branch foreign key (BranchId)
-references Branch (BranchId)
-);
-go
+<br> create table Loan 
+<br> (
+<br> LoanId int primary key,
+<br> Amount decimal not null,
+<br> loan_months_terms int not null,
+<br> LoanType varchar(30) not null,
+<br> StartDate date not null,
+<br> EndDate date not null,
+<br> InterestRate varchar(20) not null,
+<br> customerid int,
+<br> BranchId int,
+<br> constraint Loan_customer foreign key (customerid)
+<br> references Customers (customerid),
+<br> constraint Loan_Branch foreign key (BranchId)
+<br> references Branch (BranchId)
+<br> );
+<br> go
 
---Creating a table named ATM
+<br> --Creating table named ATM
 
-create table ATM (
-AtmId int primary key,
-Atm_location varchar(50) NOT NULL,
-Atm_status varchar(30) NOT NULL ,
-BranchId int,
-constraint ATM_Branch foreign key (BranchId)
-references Branch(BranchId)
-);
-GO
+<br> create table ATM 
+<br> (
+<br> AtmId int primary key,
+<br> Atm_location varchar(50) NOT NULL,
+<br> Atm_status varchar(30) NOT NULL ,
+<br> BranchId int,
+<br> constraint ATM_Branch foreign key (BranchId)
+<br> references Branch(BranchId)
+<br> );
+<br> GO
 
---create table Account_Atm_transcation
+<br> --create table Account_Atm_transcation
 
-CREATE TABLE Account_Atm_transcation
-(
-TransactionDate  DATE DEFAULT GETDATE() ,
-AccountNumber INT,
-transaction-id INT identity(1,1) primary key,
-Transaction_Type_Id int,
-Atmid INT,
-Amount FLOAT NOT NULL, 
-CONSTRAINT Atm_account_transcation foreign key (AccountNumber) references Account(AccountNumber),
-CONSTRAINT transcation_Account_Atm foreign key (Transaction_Type_Id) references Transactions(Transaction_Type_Id)
-);
-GO
+<br> CREATE TABLE Account_Atm_transcation
+<br> (
+<br> TransactionDate  DATE DEFAULT GETDATE() ,
+<br> AccountNumber INT,
+<br> transactionid INT identity(1,1) primary key,
+<br> Transaction_Type_Id int,
+<br> Atmid INT,
+<br> Amount FLOAT NOT NULL, 
+<br> CONSTRAINT Atm_account_transcation foreign key (AccountNumber) references Account(AccountNumber),
+<br> CONSTRAINT transcation_Account_Atm foreign key (Transaction_Type_Id) references Transactions(Transaction_Type_Id)
+<br> );
+<br> go
 
-ALTER TABLE Account_Atm_transcation
-ALTER COLUMN TransactionId 
 
 
 
