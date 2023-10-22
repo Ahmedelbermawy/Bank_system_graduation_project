@@ -189,6 +189,40 @@
 <br> );
 <br> go
 
+#DATAWAREHOUSE
+
+# Denormalized Data Base star Schema 
+<br> Business Process "Transactions "
+<br> Grain "Low Level"
+<br> Dimensions -----> Account - Branch - Customer -ATM - Date - card 
+<br> Fact Table: Transaction Table
+
+#Satr OLTP schema
+
+![OLAP_schema](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/3f65bc83-59bd-496a-876a-409758e80f27)
+
+# Business Intelligence Using SSIS SSAS SSRS 
+# First Integration using SSIS
+
+![Atm_BranchDims](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/093af28a-95ce-4455-ab0f-56e5bc0a4b40)
+
+# Secound Cube "The cube is Genarlized About Business and Specified for CEO And CMO Measure risk And Profits About Industry"
+
+![Cube](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/a5d9acd4-638b-406b-bdcb-d48097e89a08)
+
+# Thrid Reporting using SSRS 
+
+![120-121](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/e4985995-c7a7-4491-86b4-7b7551185c82)
+
+![122-123](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/99f321b5-35aa-4c55-adbe-b25bc96bc2e4)
+
+
+
+
+
+
+
+
 
 
 
