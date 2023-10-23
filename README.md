@@ -222,7 +222,7 @@
 # It allows businesses to respond to market dynamics, customer preferences, and operational challenges more effectively and provides valuable insights to the operations, marketing, and sales teams for informed decision-making.
 
 # Watch and Try IT
-[[https://app.powerbi.com/view?r=eyJrIjoiYzBhOTBlZjktNWFmNC00YTk1LTlmMTYtN2UxMDJiNjAzZWE0IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9](https://www.novypro.com/project/baking-system-|-analysis-dashboard)https://www.novypro.com/project/baking-system-|-analysis-dashboard](https://www.novypro.com/project/baking-system-|-analysis-dashboard)
+https://www.novypro.com/project/baking-system-|-analysis-dashboard
 
 ![overview](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/33ac723b-86e4-442a-9024-c76916a70fc1)
 
