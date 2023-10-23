@@ -189,15 +189,14 @@
 <br> );
 <br> go
 
-#DATAWAREHOUSE
-
+# DATAWAREHOUSE
 # Denormalized Data Base star Schema 
 <br> Business Process "Transactions "
 <br> Grain "Low Level"
 <br> Dimensions -----> Account - Branch - Customer -ATM - Date - card 
 <br> Fact Table: Transaction Table
 
-#Satr OLTP schema
+# Satr OLTP schema
 
 ![OLAP_schema](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/3f65bc83-59bd-496a-876a-409758e80f27)
 
@@ -216,8 +215,8 @@
 
 ![122-123](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/99f321b5-35aa-4c55-adbe-b25bc96bc2e4)
 
-#Visualzation 
-#Using Power BI
+# Visualzation 
+# Using Power BI
 
 https://app.powerbi.com/view?r=eyJrIjoiYzExY2Y4ZmItNmNhZC00NWYwLTg4MjctZmQwY2M0NDY0YjAwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9
 
