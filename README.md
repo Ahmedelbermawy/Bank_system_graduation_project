@@ -221,11 +221,18 @@
 
 # It allows businesses to respond to market dynamics, customer preferences, and operational challenges more effectively and provides valuable insights to the operations, marketing, and sales teams for informed decision-making.
 
-# Watch and Try IT
+# Watch and Try IT at this Link:
+
 https://www.novypro.com/project/baking-system-|-analysis-dashboard
 
 ![overview](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/33ac723b-86e4-442a-9024-c76916a70fc1)
 
+# using Tableau 
+# Watch and Try IT at this Link:
+
+https://www.novypro.com/project/loan-customer--hr-employee-dashboard-banking-system-
+
+![ovierview tableau](https://github.com/Ahmedelbermawy/Bank_system_graduation_project/assets/133806022/9bb00c03-8352-487b-b7a6-a2e548dda5c2)
 
 
 
